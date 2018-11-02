@@ -1,4 +1,4 @@
-<?php
+<?
     // start at the top of the page since we start a session
     session_name('mysite_hit_counter');
     session_start();
@@ -27,11 +27,12 @@
     }
 ?>
 
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Mayank Kumar</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
@@ -43,7 +44,7 @@
                 <hr>
                 <p id="demo" style="font-size:30px"></p>
                 <button class="btn" type="submit" onclick="window.open('https://drive.google.com/uc?export=download&id=1HReNeiIl6k2Pt5P0qCXw7wzEA90_48I4')">Resume</button>
-                <p>You are visitor number <span style="color:aqua"><?php $hits; ?></span></p> 
+                <p>You are visitor number <span style="color:aqua"><?=$hits;?></span></p> 
             </div>
         </div>
         <div class="icon-bar">
