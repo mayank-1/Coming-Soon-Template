@@ -1,7 +1,7 @@
 /* Set height to 100% for body and html to enable the background image to cover the whole page: */
 body, html {
     height: 100%;
-    margin: 0%;
+    margin: 0;
 }
 
 .bgimg {
@@ -94,10 +94,5 @@ hr {
   .fa-github {
     background: #55ACEE;
     color: white
-  }
-
-  .sizeLogo {
-    height: 60px;
-    width: 60px;
   }
   
