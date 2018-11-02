@@ -1,4 +1,31 @@
-
+<?php
+    // start at the top of the page since we start a session
+    session_name('mysite_hit_counter');
+    session_start();
+    //
+    $fn = 'hits_counter.txt';
+    $hits = 0;
+    // read current hits
+    if (($hits = file_get_contents($fn)) === false)
+    {
+        $hits = 0;
+    }
+    // write one more hit
+    if (!isset($_SESSION['page_visited_already']))
+    {
+        if (($fp = @fopen($fn, 'w')) !== false)
+        {
+            if (flock($fp, LOCK_EX))
+            {
+                $hits++;
+                fwrite($fp, $hits, strlen($hits));
+                flock($fp, LOCK_UN);
+                $_SESSION['page_visited_already'] = 1;
+            }
+            fclose($fp);
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html>
@@ -16,8 +43,7 @@
                 <hr>
                 <p id="demo" style="font-size:30px"></p>
                 <button class="btn" type="submit" onclick="window.open('https://drive.google.com/uc?export=download&id=1HReNeiIl6k2Pt5P0qCXw7wzEA90_48I4')">Resume</button>
-                <p>You are visitor number <span style="color:aqua"><?php include('visitor.php');
-                    $hits; ?></span></p> 
+                <p>You are visitor number <span style="color:aqua"><?=$hits;?></span></p> 
             </div>
         </div>
         <div class="icon-bar">
