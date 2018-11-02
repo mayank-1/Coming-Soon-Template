@@ -43,7 +43,7 @@
                 <hr>
                 <p id="demo" style="font-size:30px"></p>
                 <button class="btn" type="submit" onclick="window.open('https://drive.google.com/uc?export=download&id=1HReNeiIl6k2Pt5P0qCXw7wzEA90_48I4')">Resume</button>
-                <p>You are visitor number <span style="color:aqua"><?=$hits;?></span></p> 
+                <p>You are visitor number <span style="color:aqua"><?php $hits; ?></span></p> 
             </div>
         </div>
         <div class="icon-bar">
