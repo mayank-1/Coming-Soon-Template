@@ -13,12 +13,6 @@ body, html {
   transform: translateY(-50%);
 }
 
-img {
-    max-width:64px;
-    max-height:64px;
-    width:auto;
-    height:auto;
-}
 
 /* Style the icon bar links */
 .icon-bar a {
